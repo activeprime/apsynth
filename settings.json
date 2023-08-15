@@ -1,0 +1,161 @@
+{
+    "name": "AP Synth Basic Setting",
+    "settings": [
+        {
+            "metadata": {
+                "entity": {
+                    "name": "Account"
+                },
+                "fields": [
+                    {
+                        "name": "billingcity",
+                        "semantic_type": "city",
+                        "description": "City name",
+                        "example": "Mountain View",
+                        "error_model": []
+                    },
+                    {
+                        "name": "name",
+                        "semantic_type": "company",
+                        "description": "Company name",
+                        "example": "My Company",
+                        "error_model": []
+                    },
+                    {
+                        "name": "isdeleted",
+                        "semantic_type": "string",
+                        "example": "false",
+                        "error_model": [
+                            {
+                                "type": "simple",
+                                "percent": 100,
+                                "value": "f"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "systemmodstamp",
+                        "semantic_type": "string",
+                        "example": "false",
+                        "error_model": [
+                            {
+                                "type": "simple",
+                                "percent": 100,
+                                "value": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "billingpostalcode",
+                        "semantic_type": "postalcode",
+                        "description": "Postal code",
+                        "example": "94040",
+                        "error_model": []
+                    },
+                    {
+                        "name": "createddate",
+                        "semantic_type": "string",
+                        "example": "false",
+                        "error_model": [
+                            {
+                                "type": "simple",
+                                "percent": 100,
+                                "value": ""
+                            }
+                        ]
+                    },
+                    {
+                        "name": "billingstate",
+                        "semantic_type": "state_abbr",
+                        "description": "State name",
+                        "example": "California",
+                        "error_model": []
+                    },
+                    {
+                        "name": "ext_id_heroku__c",
+                        "semantic_type": "uuid_v4",
+                        "error_model": []
+                    },   
+                    {
+                        "name": "billingcountry",
+                        "semantic_type": "country",
+                        "description": "Country name",
+                        "example": "United States of America",
+                        "error_model": []
+                    },                                                                            
+                    {
+                        "name": "billingstreet",
+                        "semantic_type": "street_address",
+                        "description": "Street address",
+                        "example": "800 El Camino Road",
+                        "error_model": []
+                    }
+                    ]           
+            },
+            "output": {
+                "type": "csv",
+                "file": "account.csv",
+                "count": 1000
+            }
+        },
+        {
+            "metadata": {
+                "entity": {
+                    "name": "Contact"
+                },
+                "fields": [
+                    {
+                        "name": "FirstName",
+                        "semantic_type": "first_name",
+                        "related_entity": null,
+                        "related_entity_field": null,
+                        "locales": null,
+                        "locales_percent": null,
+                        "description": "First name",
+                        "example": "John",
+                        "error_model": []
+                    },
+                    {
+                        "name": "LastName",
+                        "semantic_type": "last_name",
+                        "related_entity": null,
+                        "related_entity_field": null,
+                        "locales": null,
+                        "locales_percent": null,
+                        "description": "Last name",
+                        "example": "Doe",
+                        "error_model": []
+                    },
+                    {
+                        "name": "Phone",
+                        "semantic_type": "phone_number",
+                        "related_entity": null,
+                        "related_entity_field": null,
+                        "locales": null,
+                        "locales_percent": null,
+                        "description": "Phone number",
+                        "example": "+1-617-555-1212",
+                        "error_model": []
+                    },
+                    {
+                        "name": "ext_id_heroku__c",
+                        "semantic_type": "uuid_v4"
+                    },
+                    {
+                        "name": "Account__ext_id_heroku__c",
+                        "semantic_type": "uuid_v4",
+                        "related_entity": "Account",
+                        "related_entity_field": "ext_id_heroku__c",
+                        "error_model": [
+                        ]
+                    }
+                ]
+            },
+            "output": {
+                "type": "csv",
+                "file": "contact.csv",
+                "count": 100
+            }
+        }
+    ]
+}
