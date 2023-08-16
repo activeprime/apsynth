@@ -16,7 +16,7 @@ curl https://raw.githubusercontent.com/activeprime/apsynth/internal-test/setting
 tempsetting=`./apsynth upload --file setting.json --setting-name Setting` 
 settingid=`echo $tempsetting | cut -d ":" -f 2 | awk '{$1=$1};1' | sed $'s/\e\\[[0-9;:]*[a-zA-Z]//g'`
 
-./apsynth generate --setting $settingid2 --resource-name "HerokuSynth" > groupid.txt
+./apsynth generate --setting $settingid --resource-name "HerokuSynth" > groupid.txt
 
 groupid=`sed -n '2p' groupid.txt | cut -d ":" -f 2 | awk '{$1=$1};1'`
 
