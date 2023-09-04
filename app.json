@@ -1,10 +1,10 @@
 {
-  "name": "Remora Backup Bootstrap App",
+  "name": "ApSytnh Bootstrap App",
   "description": "Creates the Helper App for the ActivePrime SynthData DF23 Demo",
   "repository": "https://github.com/activeprime/df23-demo",
   "addons": [
     {
-      "plan": "remora-backup:mako"
+      "plan": "activeprime-synthdata-staging:test"
     }
   ],
   "formation": {
