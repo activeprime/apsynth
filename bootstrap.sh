@@ -8,10 +8,13 @@ chmod 700 ./apsynth
 echo $0: beginning synth generation process
 ./apsynth login --license $ACTIVEPRIME_SYNTHDATA_STAGING_LICENSE
 
-
 rm -rf /app/.apsynth/data/resources/*.zip 
 
-./apsynth download resources --group-id $ACTIVEPRIME_SYNTHDATA_GROUPID
+./apsynth generate --setting $ACTIVEPRIME_SYNTHDATA_SETTINGID --resource-name "DF23"  > groupid.txt
+
+groupid=`sed -n '2p' groupid.txt | cut -d ":" -f 2 | awk '{$1=$1};1'`
+
+./apsynth download resources --group-id $groupid
 
 dname=`dirname  /app/.apsynth/data/resources/*.zip`
 
