@@ -8,7 +8,13 @@ chmod 700 ./apsynth
 echo $0: beginning synth generation process
 ./apsynth login --license $ACTIVEPRIME_SYNTHDATA_STAGING_LICENSE
 
+
+echo $0: deleting previous records
+psql -c "set search_path=salesforce,public" -c "delete from account" -c "delete from lead" -c "delete from contact"  $DATABASE_URL
+
 rm -rf /app/.apsynth/data/resources/*.zip 
+rm -rf ./*.csv
+rm -rf ./groupid.txt
 
 ./apsynth generate --setting $ACTIVEPRIME_SYNTHDATA_SETTINGID --resource-name "DF23"  > groupid.txt
 
@@ -34,3 +40,5 @@ leadheader=`head -n 1 lead.csv`
 psql -c "set search_path=salesforce,public" -c '\copy lead('$leadheader') from '~/lead.csv' csv header;' $DATABASE_URL
 
 echo $0: data ready to start testing
+
+echo $0: apsynth executed
