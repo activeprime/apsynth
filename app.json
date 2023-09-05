@@ -8,8 +8,8 @@
     }
   ],
   "formation": {
-    "activeprime-synthdata-staging": {
-      "quantity": 0,
+    "activeprime-synthdata": {
+      "quantity": 1,
       "size": "standard-1x"
     }
   },
